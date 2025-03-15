@@ -43,43 +43,49 @@ button.addEventListener("click", function () {
 });
 // ** Oq rang tugmasi bosilganda**
 document.querySelector(".white").addEventListener("click", function () {
-    if (window.screen.availWidth <= 380) {
-        Qrcode("https://qrcode-generator-xi-one.vercel.app/", "#000", "#fff", false, "../img/scanme.jpg", 200, 200);
-    } else {
-        Qrcode("https://qrcode-generator-xi-one.vercel.app/", "#000", "#fff", false, "../img/scanme.jpg", 280, 280);
-    }
     document.querySelector(".black").style.border = "none";
     document.querySelector(".white").style.border = "2px solid blue";
     if (fileInput.files.length > 0) {
         let reader = new FileReader();
         reader.onload = function (event) {
             let imageUrl = event.target.result;
-            Qrcode(urlInput.value, "#fff", "#000", false, imageUrl);
+            if (window.screen.availWidth <= 380) {
+                Qrcode(urlInput.value, "#fff", "#000", false, imageUrl, 200, 200);
+            } else {
+                Qrcode(urlInput.value, "#fff", "#000", false, imageUrl, 280, 280);
+            }
         };
         reader.readAsDataURL(fileInput.files[0]);
     } else {
-        Qrcode(urlInput.value, "#fff", "#000", false, "../img/logo-big.png");
+        if (window.screen.availWidth <= 380) {
+            Qrcode(urlInput.value, "#fff", "#000", false, "../img/logo-big.png", 200, 200);
+        } else {
+            Qrcode(urlInput.value, "#fff", "#000", false, "../img/logo-big.png", 280, 280);
+        }
     }
     document.querySelector(".main_box_qrcode").style.backgroundColor = "#000";
 });
 // ** Qora rang tugmasi bosilganda**
 document.querySelector(".black").addEventListener("click", function () {
-    if (window.screen.availWidth <= 380) {
-        Qrcode("https://qrcode-generator-xi-one.vercel.app/", "#000", "#fff", false, "../img/scanme.jpg", 200, 200);
-    } else {
-        Qrcode("https://qrcode-generator-xi-one.vercel.app/", "#000", "#fff", false, "../img/scanme.jpg", 280, 280);
-    }
     document.querySelector(".black").style.border = "2px solid blue";
     document.querySelector(".white").style.border = "none";
     if (fileInput.files.length > 0) {
         let reader = new FileReader();
         reader.onload = function (event) {
             let imageUrl = event.target.result;
-            Qrcode(urlInput.value, "#000", "#fff", false, imageUrl);
+            if (window.screen.availWidth <= 380) {
+                Qrcode(urlInput.value, "#000", "#fff", false, imageUrl, 200, 200);
+            } else {
+                Qrcode(urlInput.value, "#000", "#fff", false, imageUrl, 280, 280);
+            }
         };
         reader.readAsDataURL(fileInput.files[0]);
     } else {
-        Qrcode(urlInput.value, "#000", "#fff", false, "../img/logo-big.png");
+        if (window.screen.availWidth <= 380) {
+            Qrcode(urlInput.value, "#000", "#fff", false, "../img/logo-big.png", 200, 200);
+        } else {
+            Qrcode(urlInput.value, "#000", "#fff", false, "../img/logo-big.png", 280, 280);
+        }
     }
     document.querySelector(".main_box_qrcode").style.backgroundColor = "#fff";
 });
