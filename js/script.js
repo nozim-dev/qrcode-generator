@@ -43,6 +43,11 @@ button.addEventListener("click", function () {
 });
 // ** Oq rang tugmasi bosilganda**
 document.querySelector(".white").addEventListener("click", function () {
+    if (window.screen.availWidth <= 380) {
+        Qrcode("https://qrcode-generator-xi-one.vercel.app/", "#000", "#fff", false, "../img/scanme.jpg", 200, 200);
+    } else {
+        Qrcode("https://qrcode-generator-xi-one.vercel.app/", "#000", "#fff", false, "../img/scanme.jpg", 280, 280);
+    }
     document.querySelector(".black").style.border = "none";
     document.querySelector(".white").style.border = "2px solid blue";
     if (fileInput.files.length > 0) {
@@ -59,6 +64,11 @@ document.querySelector(".white").addEventListener("click", function () {
 });
 // ** Qora rang tugmasi bosilganda**
 document.querySelector(".black").addEventListener("click", function () {
+    if (window.screen.availWidth <= 380) {
+        Qrcode("https://qrcode-generator-xi-one.vercel.app/", "#000", "#fff", false, "../img/scanme.jpg", 200, 200);
+    } else {
+        Qrcode("https://qrcode-generator-xi-one.vercel.app/", "#000", "#fff", false, "../img/scanme.jpg", 280, 280);
+    }
     document.querySelector(".black").style.border = "2px solid blue";
     document.querySelector(".white").style.border = "none";
     if (fileInput.files.length > 0) {
