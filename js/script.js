@@ -1,7 +1,6 @@
 const button = document.querySelector(".button");
 const urlInput = document.querySelector("#url");
 const fileInput = document.querySelector(".file"); // Foydalanuvchi yuklaydigan fayl
-
 function Qrcode(url, color, backgroundColor, isDownload, insideImg) {
     const qrCode = new QRCodeStyling({
         width: 280,
@@ -27,7 +26,8 @@ function Qrcode(url, color, backgroundColor, isDownload, insideImg) {
     if (isDownload) {
         qrCode.download({ name: "qr", extension: "svg" });
     }
-}
+};
+Qrcode("https://qrcode-generator-xi-one.vercel.app/", "#000", "#fff", false, "../img/scanme.jpg");
 // ** Asosiy Generate tugmasi bosilganda**
 button.addEventListener("click", function () {
     if (fileInput.files.length > 0) {
@@ -41,9 +41,10 @@ button.addEventListener("click", function () {
         Qrcode(urlInput.value, "#000", "#fff", false, "../img/logo-big.png");
     }
 });
-
 // ** Oq rang tugmasi bosilganda**
 document.querySelector(".white").addEventListener("click", function () {
+    document.querySelector(".black").style.border = "none";
+    document.querySelector(".white").style.border = "2px solid blue";
     if (fileInput.files.length > 0) {
         let reader = new FileReader();
         reader.onload = function (event) {
@@ -56,9 +57,10 @@ document.querySelector(".white").addEventListener("click", function () {
     }
     document.querySelector(".main_box_qrcode").style.backgroundColor = "#000";
 });
-
 // ** Qora rang tugmasi bosilganda**
 document.querySelector(".black").addEventListener("click", function () {
+    document.querySelector(".black").style.border = "2px solid blue";
+    document.querySelector(".white").style.border = "none";
     if (fileInput.files.length > 0) {
         let reader = new FileReader();
         reader.onload = function (event) {
@@ -71,7 +73,6 @@ document.querySelector(".black").addEventListener("click", function () {
     }
     document.querySelector(".main_box_qrcode").style.backgroundColor = "#fff";
 });
-
 // ** QR kodni yuklab olish**
 document.querySelector(".download").addEventListener("click", function () {
     if (fileInput.files.length > 0) {

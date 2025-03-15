@@ -3,12 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>QR Code Generator</title>
     <script
       type="text/javascript"
       src="https://unpkg.com/qr-code-styling@1.5.0/lib/qr-code-styling.js"
     ></script>
     <link rel="stylesheet" href="./style/style.css" />
+    <link rel="shortcut icon" href="./img/logo-big.png" type="image/x-icon" />
   </head>
   <body>
     <div class="container">
@@ -36,10 +37,11 @@
               type="text"
               name=""
               id="url"
+              value="https://qrcode-generator-xi-one.vercel.app/"
               placeholder="Enter text or URL here "
             />
             <label for="file"
-              >Image
+              >Inside of qrcode image
               <input type="file" class="file" id="file" />
               <div class="button_d">
                 <span class="btn__icon">
@@ -70,7 +72,11 @@
         </div>
         <div class="main_btn">
           <button class="download">Download</button>
-          <a href="https://github.com/nozim-dev/qrcode-generator" class="main_btn_img">
+          <a
+            target="_blank"
+            href="https://github.com/nozim-dev/qrcode-generator"
+            class="main_btn_img"
+          >
             <img src="./img/GitHub.png" alt="" />
           </a>
         </div>
