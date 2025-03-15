@@ -1,10 +1,10 @@
 const button = document.querySelector(".button");
 const urlInput = document.querySelector("#url");
 const fileInput = document.querySelector(".file"); // Foydalanuvchi yuklaydigan fayl
-function Qrcode(url, color, backgroundColor, isDownload, insideImg) {
+function Qrcode(url, color, backgroundColor, isDownload, insideImg, width = 280, height = 280) {
     const qrCode = new QRCodeStyling({
-        width: 280,
-        height: 280,
+        width: width,
+        height: height,
         type: "svg",
         data: url,
         image: insideImg, // Rasm kiritiladi
@@ -86,3 +86,15 @@ document.querySelector(".download").addEventListener("click", function () {
         Qrcode(urlInput.value, "#000", "#fff", true, "../img/logo-big.png");
     }
 });
+window.addEventListener("resize", function () {
+    if (window.screen.availWidth <= 380) {
+        Qrcode("https://qrcode-generator-xi-one.vercel.app/", "#000", "#fff", false, "../img/scanme.jpg", 200, 200);
+    } else {
+        Qrcode("https://qrcode-generator-xi-one.vercel.app/", "#000", "#fff", false, "../img/scanme.jpg", 280, 280);
+    }
+});
+if (window.screen.availWidth <= 380) {
+    Qrcode("https://qrcode-generator-xi-one.vercel.app/", "#000", "#fff", false, "../img/scanme.jpg", 200, 200);
+} else {
+    Qrcode("https://qrcode-generator-xi-one.vercel.app/", "#000", "#fff", false, "../img/scanme.jpg", 280, 280);
+}
