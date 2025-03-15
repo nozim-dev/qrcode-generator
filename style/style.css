@@ -142,7 +142,10 @@
 * .container main .main_box .main_box_form input::placeholder {
   color: rgba(255, 255, 255, 0.15);
 }
-* .container main .main_box .main_box_form button {
+* .container main .main_box .main_box_form input[type=file] {
+  display: none;
+}
+* .container main .main_box .main_box_form .button {
   margin-top: 26px;
   width: 100%;
   max-width: 152px;
@@ -159,7 +162,30 @@
   cursor: pointer;
   transition: all 0.4s;
 }
-* .container main .main_box .main_box_form button:hover {
+* .container main .main_box .main_box_form .button:hover {
+  opacity: 0.8;
+}
+* .container main .main_box .main_box_form .button_d {
+  margin-top: 8px;
+  width: 100%;
+  background-color: rgb(119, 61, 166);
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+  padding-right: 1rem;
+  font-weight: 600;
+  font-size: 14px;
+  font-family: "Monda";
+  font-weight: bold;
+  line-height: 139.6%;
+  white-space: nowrap;
+  border-radius: 8px;
+}
+* .container main .main_box .main_box_form .button_d:hover {
   opacity: 0.8;
 }
 * .container main .main_btn {
